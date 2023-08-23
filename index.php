@@ -14,6 +14,29 @@
       ==> Conseil: 
       utilisez "Codacy", " SymfonyInseight ", "CodeClimate" pour auditer la qualité de notre code. En effet, ils permettent de détécter une fonction surchargée de notre code.
     </p>
+
+    <h2>Utiliser MakerBundle</h2>
+
+    <p>
+      Symfony Maker est un pack qui nous aide a créer des contyrollers, des formulaires , des tests et bien plus encore .
+
+      Tout d'abord, assurons-nous que le bundle soit bien installé en consultant le fichier"composer.json; si ce n'est pas le cas , on tape la commande suivante:
+
+      "$ composer require --dev symfony/maker-bundle"
+
+      Pour connaitre plus de fonctionnalités qu'apporte Maker-bundle,
+       on utilise la commande suivante :
+
+      "$ php bin/console list make"
+
+
+      ===> M%aintenant créons un controller avec la ligne de commande suivante:
+
+      "$ php bin/console make:controller NewController"
+
+      
+      
+    </p>
   
   </body>
 </html>
