@@ -32,6 +32,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
         return $this->redirectToRoute('app_figure_index', [], Response::HTTP_SEE_OTHER);
       }
+
+      return $this->renderForm('figure/new.html.twig', [
+                               'figure' => $figure,
+                               'form' => $form,
+      ]);
     }
+
+    
   }
 ?>
