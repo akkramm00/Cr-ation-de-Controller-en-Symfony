@@ -39,6 +39,40 @@ use Symfony\Component\Routing\Annotation\Route;
       ]);
     }
 
-    
+    #[Route('/{id}', name: 'app_figure_show', methods: ['GET'])]
+    public function- show(Figure $figure): Response
+    {
+      return $this->render('figure/show.html.twig', [
+                           'figure' => $figure,
+      ]);
+    }
+
+    #[Route('/{id}/edit', name: 'app_figure_edit', methods: ['GET', 'POST'])]
+    public function edit(Request $request, Figure $figure, FigureRepository $figureRepository): Response
+    {
+      $form = $this-> creatreForm(FigureType::class, $figure);
+      $form-> handleRequest($request);
+
+      if ($form->isSubmitted() && $form->isvalid()){
+        $figureRepository->add($figure, true);
+
+        return $this-> redirectToRoute('app_figure_index', [], response::HTTP_SEE_OTHER);
+      }
+
+      return $this->rebderForm('figure/edit.html.twig', [
+                               'figure'=> $figure,
+                               'form' => $form
+      ]);
+    }
+
+    #[Route('/{id}', name: 'app_figure_çdelete', methods: ['POST'])]
+    public function delete(Request $request, Figure $figure, FigureRepository $figureRepository): Response
+    {
+      if($this->isCsrfTokenValid('delete'.$figure->getId(), $request->request->get('_token'))) {
+        $figureRepository->remove($figure, true);
+      }
+
+      return $this->redirectToRoute('app_figure_index', [], Response::HTTP_SEE_OTHER).
+    }
   }
 ?>
