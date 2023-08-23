@@ -34,6 +34,23 @@
 
       "$ php bin/console make:controller NewController"
 
+
+      Maintenant allons plus loin en créant un controller à partir d'une " Entité  " .Cet ORM de Doctrine permet de gérer tous les éléments de la base de données que nous avons créer à partir d'une entité.
+
+      Le but va être de créer un "CRUD" (Create, Read, Update, Delete), c-à-d les fonctions de base qui permettent de créer , de récupérer, de mettre à jour ou de supprimer des objets.
+
+      Pour cela , nouis utilisons la ligne de commande suivante qui va utiliser une entité déja créé qui se nomme "Figure" :
+
+      "$ php bin/console make: crud Figure "
+
+
+      Maker va  nouis demander comment nous voulons nommer le nouveau controller. il nouis proposera par défaut de rajouter "Controller " au nom de notre Entité. Puis ,il nous demandera si nous souhaitons générer des tests pour notre controller. Nous pouvons répondre "No" , surtout si nous ne maîtrisons pas encore les tests, mais tester ses controllers est une excellente pratique à adopter.
+
+      ==> Voici le code que Symfony nous a généré dans le nouveau controleur qui se nomme "FigureController" :
+
+      Voir le fichier fFgureController.php
+      
+
       
       
     </p>
