@@ -49,10 +49,23 @@
       ==> Voici le code que Symfony nous a généré dans le nouveau controleur qui se nomme "FigureController" :
 
       Voir le fichier fFgureController.php
-      
+    </p>
 
-      
-      
+    <h2>Description of the figureContoller</h2>
+    <p>
+      NOus n'allons pas tout décrire, mais notons que cinq méthodes ont été crées:
+
+      => index(): Dont lme but est de retourner dans la vue aussi créé(figure/index.html.twig) toutes les figure de la base de données.
+
+      => new() : Utilise la méthode "POST" et donc permet de créer une nouvelle figure à partir d'un formulaire. Formulaire qui a d'ailleurs été ajouté dans le dossier 'Form' sous le nom de "FigureType".
+
+      => show() : Dont le but est de retourner une figure en detail grâce àl'id passé en paramètrede l'URL.
+
+      => edit() : Qui va permettre de modifier une figure précise grace a l'id.
+
+      => delete() : Qui , comme son nom l'indique, va permettre au controller de supprimer une figure.
+
+      Pour résumer? avec la ligne de commande php bin/console make:crud Figure, Symfony a créé un nouveau controleur "FigureController" avec cinq méthodes essentielles et ce qui est nécessaire pour fonctionner.
     </p>
   
   </body>

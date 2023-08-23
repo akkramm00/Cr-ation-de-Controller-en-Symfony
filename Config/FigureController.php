@@ -21,7 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
       ]);
     }
     #[Route('/new', name: 'app_figure_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, FigureRepository $figureRepository)
+    public function new(Request $request, FigureRepository $figureRepository): Response
     {
       $figure = new Figure();
       $form = $this->createForm(FigureType::class, $figure);
@@ -40,7 +40,7 @@ use Symfony\Component\Routing\Annotation\Route;
     }
 
     #[Route('/{id}', name: 'app_figure_show', methods: ['GET'])]
-    public function- show(Figure $figure): Response
+    public function show(Figure $figure): Response
     {
       return $this->render('figure/show.html.twig', [
                            'figure' => $figure,
